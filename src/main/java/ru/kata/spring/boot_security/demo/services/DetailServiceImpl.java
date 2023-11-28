@@ -20,9 +20,11 @@ public class DetailServiceImpl implements UserDetailsService {
     }
     @Override
     @Transactional
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> foundUser = Optional.of(userRepository.findByUsername(username)
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Optional<User> foundUser = Optional.of(userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Пользователь не найден")));
         return  foundUser.get();
     }
+
+
 }

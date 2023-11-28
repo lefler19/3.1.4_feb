@@ -23,17 +23,17 @@ public class Util {
         }
         @PostConstruct
         public void initializedDataBase() {
-            // roleService.save(new Role("ROLE_ADMIN"));
-            // roleService.save(new Role("ROLE_USER"));
+           //  roleService.save(new Role("ROLE_ADMIN"));
+           //  roleService.save(new Role("ROLE_USER"));
             Set<Role> adminRole = new HashSet<>();
             Set<Role> userRole = new HashSet<>();
             Set<Role> allRoles = new HashSet<>();
-            adminRole.add(roleService.showUserById(1));
-            userRole.add(roleService.showUserById(2));
-            allRoles.add(roleService.showUserById(1));
+            adminRole.add(roleService.showUserById(2));
+            userRole.add(roleService.showUserById(1));
             allRoles.add(roleService.showUserById(2));
-            userService.save(new User("vovaa", "vovaa@gmail.ru", "100", adminRole));
-            userService.save(new User("dollaa",  "dollaa@gmail.ru","100", userRole));
-            userService.save(new User("yosii",  "yosii@gmail.com","100", allRoles));
+            allRoles.add(roleService.showUserById(1));
+            userService.save(new User("dima", "dima@gmail.ru", "100", adminRole));
+            userService.save(new User("alica",  "alica@gmail.ru","100", userRole));
+            userService.save(new User("ilona",  "ilona@gmail.com","100", allRoles));
         }
 }

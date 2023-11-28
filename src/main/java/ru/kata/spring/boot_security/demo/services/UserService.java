@@ -13,6 +13,7 @@ public interface UserService  {
 
    void update(Integer id, User user);
 
-    User findByUsername(String username);
+    User findByUsername(String email);
+    User findByEmail(String email);
  List<User> getAllUsers();
 }
