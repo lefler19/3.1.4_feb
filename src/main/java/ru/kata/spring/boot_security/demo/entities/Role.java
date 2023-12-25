@@ -32,7 +32,7 @@ import java.util.Set;
 
     @Override
     public String toString() {
-        return getName().substring(getName().indexOf('_') + 1);
+        return name.replace("ROLE_", "");
     }
 
     public Integer getId() {
@@ -72,5 +72,6 @@ import java.util.Set;
     public String getAuthority() {
         return name;
     }
+
 }
 

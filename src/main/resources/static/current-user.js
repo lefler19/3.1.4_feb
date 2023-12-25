@@ -8,7 +8,10 @@ function getCurrentUser() {
 
             //let rolesStringUser = rolesToStringForUser(user.roles);
             let rolesStringUser = user.roles;
-            let dataOfUser = '';
+           // let rolesUser = '${(user.roles.map(role=> " "  + role.name.substring(5))}';
+
+
+                let dataOfUser = '';
 
             dataOfUser += `<tr>
             <td>${user.id}</td>
