@@ -7,7 +7,7 @@ function getCurrentAdmin() {
         .then((res) => res.json())
         .then((userAdmin) => {
 
-            let rolesStringAdmin = userAdmin.roles;
+            let rolesStringAdmin =  rolesToStringForAdmin(userAdmin.roles);;
             let data = '';
 
             data += `<tr>
@@ -25,12 +25,12 @@ function getCurrentAdmin() {
 
 getCurrentAdmin()
 
-// function rolesToStringForAdmin(roles) {
-//     let rolesString = '';
-//
-//     for (const element of roles) {
-//         rolesString += (element.name.toString().replace('ROLE_', '') + ', ');
-//     }
-//     rolesString = rolesString.substring(0, rolesString.length - 2);
-//     return rolesString;
-// }
+function rolesToStringForAdmin(roles) {
+    let rolesString = '';
+
+    for (const element of roles) {
+        rolesString += (element.name.toString().replace('ROLE_', '') + ', ');
+    }
+    rolesString = rolesString.substring(0, rolesString.length - 2);
+    return rolesString;
+}
