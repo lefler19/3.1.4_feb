@@ -6,12 +6,12 @@ function getCurrentUser() {
         .then((res) => res.json())
         .then((user) => {
 
-            //let rolesStringUser = rolesToStringForUser(user.roles);
-            let rolesStringUser = user.roles;
-           // let rolesUser = '${(user.roles.map(role=> " "  + role.name.substring(5))}';
+            let rolesStringUser = rolesToStringForUser(user.roles);
+           // let rolesStringUser = user.roles;
+            // let rolesUser = '${(user.roles.map(role=> " "  + role.name.substring(5))}';
 
 
-                let dataOfUser = '';
+            let dataOfUser = '';
 
             dataOfUser += `<tr>
             <td>${user.id}</td>
@@ -31,11 +31,11 @@ getCurrentUser()
 
 //ВСЕ РАБОТАЕТ ЗА ИСКЛЮЧЕНИЕМ ROLE
 
-// function rolesToStringForUser(roles) {
-//     let rolesString = '';
-//     for (let element of roles) {
-//         rolesString += (element.name.toString().replace('ROLE_', '') + ', ');
-//     }
-//     rolesString = rolesString.substring(0, rolesString.length - 2);
-//     return rolesString;
-// }
+function rolesToStringForUser(roles) {
+    let rolesString = '';
+    // for (let element of roles) {
+    //     rolesString += (element.name.toString().replace('ROLE_', '') + ', ');
+    // }
+    rolesString = rolesString.substring(0, rolesString.length - 2);
+    return rolesString;
+}
