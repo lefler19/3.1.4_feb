@@ -7,30 +7,21 @@ function getCurrentAdmin() {
         .then((res) => res.json())
         .then((userAdmin) => {
 
-            let rolesStringAdmin =  rolesToStringForAdmin(userAdmin.roles);;
             let data = '';
 
+            const rolesString = userAdmin.authorities.map(role => role.authority).join(", ");
             data += `<tr>
             <td>${userAdmin.id}</td>
             <td>${userAdmin.username}</td>
             <td>${userAdmin.email}</td>
-            <td>${rolesStringAdmin}</td>
+            <td>${rolesString}</td>
             </tr>`;
             tableUserAdmin.innerHTML = data;
             navbarBrandAdmin.innerHTML = `<b><span>${userAdmin.email}</span></b>
                              <span>with roles:</span>
-                             <span>${rolesStringAdmin}</span>`;
+                             <span>${rolesString}</span>`;
         });
 }
 
 getCurrentAdmin()
 
-function rolesToStringForAdmin(roles) {
-    let rolesString = '';
-
-    for (const element of roles) {
-        rolesString += (element.name.toString().replace('ROLE_', '') + ', ');
-    }
-    rolesString = rolesString.substring(0, rolesString.length - 2);
-    return rolesString;
-}

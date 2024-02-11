@@ -12,7 +12,7 @@ function createNewUser() {
             if (formNew.roles.options[i].selected)
                 rolesForNewUser.push({
                     id: formNew.roles.options[i].value,
-                    role: "ROLE_" + formNew.roles.options[i].text
+                    role:  "ROLE_" + formNew.roles.options[i].text
                 });
         }
 

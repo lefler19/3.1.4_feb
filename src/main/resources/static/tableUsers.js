@@ -9,13 +9,14 @@ function getAllUsers() {
         })
         .then(function (users) {
             let dataOfUsers = '';
-            let rolesString = ''; // Здесь будет результат функции rolesToString
+
 
             const tableUsers = document.getElementById('tableUsers');
 
             for (let user of users) {
 
-                rolesString = user.roles;
+
+const rolesString = user.authorities.map(role => role.authority).join(", ");
 
                 dataOfUsers += `<tr>
                         <td>${user.id}</td>
@@ -50,11 +51,3 @@ function getAllUsers() {
         })
 }
 
-// function rolesToString(roles) {
-//     let rolesString = '';
-//     for (const element of roles) {
-//         rolesString += (element.name.toString().replace('ROLE_', '') + ', ');
-//     }
-//     rolesString = rolesString.substring(0, rolesString.length - 2); // -2, чтобы не показывать последнюю запятую с пробелом
-//     return rolesString;
-// }

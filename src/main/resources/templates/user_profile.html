@@ -1,48 +1,61 @@
-<!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-     >
+<!DOCTYPE html>
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
 
 
     <title>User page</title>
 </head>
 <body>
 
-
 <header>
     <nav class="navbar navbar-dark bg-dark">
-    <span class="navbar-brand" id="navbarBrandUser">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1" id="navbarBrandUser">
 
-    </span>
-        <form th:action="@{/logout}" th:method="POST">
-            <button type="submit" class="btn btn-outline-dark" style="color: lightgrey">Logout</button>
-        </form>
+
+            </span>
+
+            <a class="btn text-muted" aria-current="page" th:href="@{/logout}">Logout</a>
+
+        </div>
+
     </nav>
 </header>
 
+
+<br>
+
 <div class="d-flex align-items-start">
 
-    <div class="col-2">
-        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <button class="nav-link active" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user"
-                    type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">User
-            </button>
+    <div class = "col-2">
+
+        <div class = "nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
+
+            <a class="nav-link active" id="v-pills-user-tab" data-bs-toggle="pill"
+               data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user"
+               aria-selected="true">User</a>
         </div>
     </div>
 
-
-
     <div class="col-10">
-        <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-content bg-light" id="v-pills-tabContent">
+
+
             <div class="tab-pane fade show active" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab">
+
                 <p class="fw-bold fs-3">User information-page</p>
 
                 <p class="fw-bold fs-5">About user</p>
@@ -60,6 +73,8 @@
                     </tbody>
                 </table>
             </div>
+
+
         </div>
     </div>
 </div>
